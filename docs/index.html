@@ -1,1 +1,245 @@
-Test
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Consistent Video Depth Estimation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  </head>
+  <body>
+
+    <!-- Start Hero -->
+    <section class="hero">
+      <div class="container">
+
+        <div class="hero-body">
+
+          <div class="level">
+            <h1 class="title level-item has-text-centered">Consistent Video Depth Estimation</h1>
+          </div>
+
+          <!-- Authors -->
+          <div class="columns">
+            <div class="column has-text-centered">
+              <a href=""><h2 class="subtitle"><nobr>Xuan Luo</nobr></h2></a>
+              <h3 class="content is-small"><nobr>University of Washington</nobr></h3>
+            </div>
+            <div class="column has-text-centered">
+              <a href=""><h2 class="subtitle"><nobr>Jia-Bin Huang</nobr></h2></a>
+              <h3 class="content is-small"><nobr>Virginia Tech</nobr></h3>
+            </div>
+            <div class="column has-text-centered">
+              <a href=""><h2 class="subtitle"><nobr>Richard Szeliski</nobr></h2></a>
+              <h3 class="content is-small"><nobr>Facebook</nobr></h3>
+            </div>
+            <div class="column has-text-centered">
+              <a href=""><h2 class="subtitle"><nobr>Kevin Matzen</nobr></h2></a>
+              <h3 class="content is-small"><nobr>Facebook</nobr></h3>
+            </div>
+            <div class="column has-text-centered">
+              <a href=""><h2 class="subtitle"><nobr>Johannes Kopf</nobr></h2></a>
+              <h3 class="content is-small"><nobr>Facebook</nobr></h3>
+            </div>
+          </div>
+          <!-- End of Authors -->
+        </div>
+      
+        <!-- Links -->
+        <div class="hero-foot">
+          <div class="columns is-centered">
+            <div class="column is-half">
+              <div class="columns is-variable is-8">
+                <div class="column has-text-centered">
+                  <figure class="image is-64x64 container">
+                      <img src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5cab99df4998decfbf9e218e_paper-01-p-500.png" alt="paper" class="paper_img image-8 github_icon_nerf_v2">
+                  </figure>
+                  <p><a href="">Paper</a></p>
+                </div>
+                <div class="column has-text-centered">
+                  <figure class="image is-64x64 container">
+                    <img src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5cae3b53b42ebb3dd4175a82_68747470733a2f2f7777772e69636f6e66696e6465722e636f6d2f646174612f69636f6e732f6f637469636f6e732f313032342f6d61726b2d6769746875622d3235362e706e67.png" alt="paper" class="paper_img image-8 github_icon_nerf_v2">
+                  </figure>
+                  <p><a href="">Code</a></p>
+                </div>
+                <div class="column has-text-centered">
+                  <figure class="image is-64x64 container">
+                    <img src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5e7136849ee3b0a0c6a95151_database.svg" alt="paper" class="paper_img image-8_nerf nerf_db_icon">
+                  </figure>
+                  <p class="content is-small"><a href="">Supplementary materials</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End of Links -->
+      </div>
+      <!-- End of Container -->
+    </section>
+
+
+   
+
+    <section class="section" id="slide">
+      <div class="container">
+        <!-- Start Carousel -->
+        <div id="carousel-demo" class="carousel">
+          <div class="item-1">
+            <video muted controls loop>
+              <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
+                "Your browser does not support the video tag"
+            </video>
+          </div>
+          <div class="item-2">
+            <video muted controls loop>
+              <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
+                "Your browser does not support the video tag"
+            </video>
+          </div>
+          <div class="item-3">
+            <video muted controls loop>
+              <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
+                "Your browser does not support the video tag"
+            </video>
+          </div>
+          <div class="item-1">
+            <video muted controls loop>
+              <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
+                "Your browser does not support the video tag"
+            </video>
+          </div>
+          <div class="item-2">
+            <video muted controls loop>
+              <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
+                "Your browser does not support the video tag"
+            </video>
+          </div>
+          <div class="item-3">
+            <video muted controls loop>
+              <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
+                "Your browser does not support the video tag"
+            </video>
+          </div>
+        </div>
+        <!-- End Carousel -->
+      </div>
+    </section>
+
+    <section class="section" id="Overview-Video">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-two-thirds">
+            
+            <iframe width="100%" height="300px" src="https://www.youtube.com/embed/W2P-suog684" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section" id="Abstract">
+      <div class="container content">
+        <div class="columns is-centered">
+          <div class="column is-two-thirds has-text-justified">
+            <h2 class="title is-3">Abstract & Method Overview</h2>
+
+            <p>
+              We present an algorithm for reconstructing dense, geometrically consistent depth for all pixels in a monocular video.
+              We leverage a conventional structure-from-motion reconstruction to establish geometric constraints on pixels in the video.
+              Unlike the ad-hoc priors in classical reconstruction, we use a learning-based prior, i.e., a convolutional neural network trained for single-image depth estimation.
+              At test time, we fine-tune this network to satisfy the geometric constraints of a particular input video, while retaining its ability to synthesize plausible depth details in parts of the video that are less constrained.
+              We show through quantitative validation that our method achieves higher accuracy and a higher degree of geometric consistency than previous monocular reconstruction methods.
+              Visually, our results appear more stable.
+              Our algorithm is able to handle challenging hand-held captured input videos with a moderate degree of dynamic motion.
+              The improved quality of the reconstruction enables several applications, such as scene reconstruction and advanced video-based visual effects.
+            </p>
+
+            <p>Method ...</p> 
+            <img src="images/overview.png">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section" id="results">
+      <div class="container content">
+        <div class="columns is-centered">
+          <div class="column is-two-thirds has-text-justified">
+            <h2 class="title is-3">Results</h2>
+
+            <div class="tile is-ancestor">
+              <div class="tile is-vertical is-parent">
+                <div class="tile is-child">
+                  <video muted controls loop>
+                    <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
+                      "Your browser does not support the video tag"
+                  </video>
+                </div>
+
+                <div class="tile is-child">
+                  <video muted controls loop>
+                    <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
+                      "Your browser does not support the video tag"
+                  </video>
+                </div>
+              </div>
+
+              <div class="tile is-vertical is-parent">
+                <div class="tile is-child">
+                  <video muted controls loop>
+                    <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
+                      "Your browser does not support the video tag"
+                  </video>
+                </div>
+
+                <div class="tile is-child">
+                  <video muted controls loop>
+                    <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
+                      "Your browser does not support the video tag"
+                  </video>
+                </div>
+              </div>
+              
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section" id="BibTex">
+      <div class="container content">
+        <div class="columns is-centered">
+          <div class="column is-two-thirds has-text-justified">
+            <h2 class="titile">BibTex</h2>
+            <blockquote>
+               <pre>@article{Occlusion2018,
+                author    = {Aleksander Holynski and Johannes Kopf},
+                title     = {Fast Depth Densification for Occlusion-aware Augmented Reality},
+                booktitle = {ACM Transactions on Graphics (Proc. SIGGRAPH Asia)},
+                publisher = {ACM},
+                volume = {37},
+                number = {6},
+                year = {2018}
+              }</pre>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"></script>
+    <script>
+    bulmaCarousel.attach('#carousel-demo', {
+      slidesToScroll: 1,
+      slidesToShow: 4,
+      infinite: true
+    });
+    </script>
+  </body>
+</html>
+
