@@ -93,41 +93,69 @@
 
                 <!-- start carousel item list -->
                 <div class="item-1">
-                  <video muted controls loop>
-                    <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
-                      "Your browser does not support the video tag"
-                  </video>
+                  <figure class="image is-9by16">
+                    <video class="has-ratio" muted controls loop autoplay>
+                      <source src="videos/carousel/ayush_color.mp4" type="video/mp4" width="100%" height="100%">
+                        "Your browser does not support the video tag"
+                    </video>
+                  </figure>
                 </div>
+
                 <div class="item-2">
-                  <video muted controls loop>
-                    <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
-                      "Your browser does not support the video tag"
-                  </video>
+                  <figure class="image is-9by16">
+                    <video class="has-ratio" muted controls loop autoplay>
+                      <source src="videos/carousel/ayush_depth.mp4" type="video/mp4" width="100%" height="100%">
+                        "Your browser does not support the video tag"
+                    </video>
+                  </figure>
                 </div>
-                <div class="item-3">
-                  <video muted controls loop>
-                    <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
-                      "Your browser does not support the video tag"
-                  </video>
+
+                <div class="item-2">
+                  <figure class="image is-9by16">
+                    <video class="has-ratio" muted controls loop autoplay>
+                      <source src="videos/carousel/ayush_balls.mp4" type="video/mp4" width="100%" height="100%">
+                        "Your browser does not support the video tag"
+                    </video>
+                  </figure>
                 </div>
-                <div class="item-4">
-                  <video muted controls loop>
-                    <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
-                      "Your browser does not support the video tag"
-                  </video>
-                </div>
-                <div class="item-5">
-                  <video muted controls loop>
-                    <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
-                      "Your browser does not support the video tag"
-                  </video>
-                </div>
+
                 <div class="item-6">
-                  <video muted controls loop>
-                    <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
-                      "Your browser does not support the video tag"
-                  </video>
+                  <figure class="image is-9by16">
+                    <video class="has-ratio" muted controls loop>
+                      <source src="videos/carousel/ayush_snow.mp4" type="video/mp4" width="100%" height="100%">
+                        "Your browser does not support the video tag"
+                    </video>
+                  </figure>
                 </div>
+
+
+                <div class="item-4">
+                  <figure class="image is-9by16">
+                    <video class="has-ratio" muted controls loop>
+                      <source src="videos/carousel/ayush_cyberpunk.mp4" type="video/mp4" width="100%" height="100%">
+                        "Your browser does not support the video tag"
+                    </video>
+                  </figure>
+                </div>
+
+                <div class="item-3">
+                  <figure class="image is-9by16">
+                    <video class="has-ratio" muted controls loop>
+                      <source src="videos/carousel/ayush_cubes.mp4" type="video/mp4" width="100%" height="100%">
+                        "Your browser does not support the video tag"
+                    </video>
+                  </figure>
+                </div>
+
+                <div class="item-5">
+                  <figure class="image is-9by16">
+                    <video class="has-ratio" muted controls loop>
+                      <source src="videos/carousel/ayush_firebois.mp4" type="video/mp4" width="100%" height="100%">
+                        "Your browser does not support the video tag"
+                    </video>
+                  </figure>
+                </div>
+
                 <!-- end carousel item list -->
 
               </div>
@@ -230,17 +258,14 @@
         <div class="columns is-centered">
           <div class="column is-two-thirds has-text-justified">
             <h2 class="titile">BibTex</h2>
-            <blockquote>
-               <pre>@article{Occlusion2018,
-                author    = {Aleksander Holynski and Johannes Kopf},
-                title     = {Fast Depth Densification for Occlusion-aware Augmented Reality},
-                booktitle = {ACM Transactions on Graphics (Proc. SIGGRAPH Asia)},
-                publisher = {ACM},
-                volume = {37},
-                number = {6},
-                year = {2018}
-              }</pre>
-            </blockquote>
+              <pre><code>@article{Occlusion2018,
+  author    = {Aleksander Holynski and Johannes Kopf},
+  title     = {Fast Depth Densification for Occlusion-aware Augmented Reality},
+  booktitle = {ACM Transactions on Graphics (Proc. SIGGRAPH Asia)},
+  publisher = {ACM},
+  volume = {37},
+  number = {6},
+  year = {2018}</code></pre>
           </div>
         </div>
       </div>
@@ -250,7 +275,7 @@
     <script>
     bulmaCarousel.attach('#carousel-results', {
       slidesToScroll: 1,
-      slidesToShow: 2,
+      slidesToShow: 4,
     });
     </script>
   </body>
