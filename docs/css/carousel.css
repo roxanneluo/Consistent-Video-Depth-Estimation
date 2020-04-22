@@ -3,13 +3,12 @@
 }
 
 .tile.is-child {
-padding-left: .75rem;
-padding-right: .75rem;
+	padding-left: .75rem;
+	padding-right: .75rem;
 }
-
 .tile.is-child:first-child {
-padding-left: 0;
+	padding-left: 0;
 }
 .tile.is-child:last-child {
-padding-right: 0;
-      }
+	padding-right: 0;
+}
