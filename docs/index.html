@@ -212,39 +212,47 @@
           <div class="column is-two-thirds has-text-justified">
             <h2 class="title is-3">Results</h2>
 
-            <div class="tile is-ancestor">
-              <div class="tile is-vertical is-parent">
+            <div class="tile is-ancestor is-vertical">
+              <div class="tile is-parent">
                 <div class="tile is-child">
-                  <video muted controls loop>
-                    <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
+                  <video muted controls loop width="100%">
+                    <source src="videos/results/dog_color_depth.mp4" type="video/mp4">
                       "Your browser does not support the video tag"
                   </video>
                 </div>
 
                 <div class="tile is-child">
-                  <video muted controls loop>
-                    <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
+                  <video muted controls loop width="100%">
+                    <source src="videos/results/family_color_depth.mp4" type="video/mp4">
                       "Your browser does not support the video tag"
                   </video>
                 </div>
               </div>
 
-              <div class="tile is-vertical is-parent">
+              <div class="tile is-parent">
                 <div class="tile is-child">
-                  <video muted controls loop>
-                    <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
+                  <video muted controls loop width="100%">
+                    <source src="videos/results/cat_color_depth.mp4" type="video/mp4">
                       "Your browser does not support the video tag"
                   </video>
                 </div>
 
                 <div class="tile is-child">
-                  <video muted controls loop>
-                    <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
+                  <video muted controls loop width="100%">
+                    <source src="videos/results/boy_color_depth.mp4" type="video/mp4">
                       "Your browser does not support the video tag"
                   </video>
                 </div>
               </div>
               
+              <div class="tile is-parent">
+                <div class="tile is-child">
+                  <video muted controls loop width="100%">
+                    <source src="videos/results/river_color_depth.mp4" type="video/mp4">
+                      "Your browser does not support the video tag"
+                  </video>
+                </div>
+              </div>
 
             </div>
           </div>
@@ -276,6 +284,7 @@
     bulmaCarousel.attach('#carousel-results', {
       slidesToScroll: 1,
       slidesToShow: 4,
+      infinite: true,
     });
     </script>
   </body>
