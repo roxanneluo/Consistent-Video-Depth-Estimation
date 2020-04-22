@@ -76,7 +76,7 @@
                   <figure class="image is-64x64 container">
                     <img src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/5e7136849ee3b0a0c6a95151_database.svg" alt="paper" class="paper_img image-8_nerf nerf_db_icon">
                   </figure>
-                  <p class="content is-small"><a href="">Supplementary materials</a></p>
+                  <p class="content is-small"><a href="">Supplementary material</a></p>
                 </div>
               </div>
             </div>
@@ -129,7 +129,7 @@
 
                 <div class="item-6">
                   <figure class="image is-9by16">
-                    <video class="has-ratio" muted controls loop>
+                    <video class="has-ratio" muted controls loop autoplay>
                       <source src="videos/carousel/ayush_snow.mp4" type="video/mp4" width="100%" height="100%">
                         "Your browser does not support the video tag"
                     </video>
@@ -139,7 +139,7 @@
 
                 <div class="item-4">
                   <figure class="image is-9by16">
-                    <video class="has-ratio" muted controls loop>
+                    <video class="has-ratio" muted controls loop autoplay>
                       <source src="videos/carousel/ayush_cyberpunk.mp4" type="video/mp4" width="100%" height="100%">
                         "Your browser does not support the video tag"
                     </video>
@@ -148,7 +148,7 @@
 
                 <div class="item-3">
                   <figure class="image is-9by16">
-                    <video class="has-ratio" muted controls loop>
+                    <video class="has-ratio" muted controls loop autoplay>
                       <source src="videos/carousel/ayush_cubes.mp4" type="video/mp4" width="100%" height="100%">
                         "Your browser does not support the video tag"
                     </video>
@@ -157,7 +157,7 @@
 
                 <div class="item-5">
                   <figure class="image is-9by16">
-                    <video class="has-ratio" muted controls loop>
+                    <video class="has-ratio" muted controls loop autoplay>
                       <source src="videos/carousel/ayush_firebois.mp4" type="video/mp4" width="100%" height="100%">
                         "Your browser does not support the video tag"
                     </video>
@@ -180,6 +180,7 @@
       <div class="container">
         <div class="columns is-centered">
           <div class="column is-two-thirds">
+            <h2 class="title is-3">Overview Video</h2>
             <figure class="image is-16by9">
              <iframe class="has-ratio" width="560" height="315" src="https://www.youtube.com/embed/W2P-suog684" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </figure>
@@ -193,7 +194,7 @@
       <div class="container content">
         <div class="columns is-centered">
           <div class="column is-two-thirds has-text-justified">
-            <h2 class="title is-3">Abstract & Method Overview</h2>
+            <h2 class="title is-3">Abstract</h2>
 
             <p>
               We present an algorithm for reconstructing dense, geometrically consistent depth for all pixels in a monocular video.
@@ -206,9 +207,6 @@
               The improved quality of the reconstruction enables several applications, such as scene reconstruction and advanced video-based visual effects.
             </p>
 
-            <p><span class="is-bold">Method overview.</span> We sample pairs of (potentially distant) frames and extract geometric constraints from optical flow and the camera poses. We then use them to fine-tune the weight of the depth estimation network via standard backpropagation. 
-                This test-time training enforces the network to minimize the geometric inconsistency error across multiple frames for this particular video.
-            </p> 
             <img src="images/overview.png">
           </div>
         </div>
@@ -271,19 +269,20 @@
     </section>
 
 
-    <section class="section" id="BibTex">
+    <section class="section" id="BibTeX">
       <div class="container content">
         <div class="columns is-centered">
           <div class="column is-two-thirds has-text-justified">
             <h2 class="titile">BibTex</h2>
-              <pre><code>@article{Occlusion2018,
-  author    = {Aleksander Holynski and Johannes Kopf},
-  title     = {Fast Depth Densification for Occlusion-aware Augmented Reality},
-  booktitle = {ACM Transactions on Graphics (Proc. SIGGRAPH Asia)},
+              <pre><code>@article{Luo-VideoDepth-2020,
+  author    = {Xuan Luo and Jia{-}Bin Huang and Richard Szeliski and Kevin Matzen and Johannes Kopf},
+  title     = {Consistent Video Depth Estimation},
+  booktitle = {ACM Transactions on Graphics (Proceedings of ACM SIGGRAPH)},
   publisher = {ACM},
   volume = {37},
   number = {6},
-  year = {2018}</code></pre>
+  year = {2020}
+}</code></pre>
           </div>
         </div>
       </div>
@@ -295,6 +294,7 @@
       slidesToScroll: 1,
       slidesToShow: 4,
       infinite: true,
+      autoplay: true,
     });
     </script>
   </body>
