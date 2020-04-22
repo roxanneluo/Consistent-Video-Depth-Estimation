@@ -6,6 +6,7 @@
     <title>Consistent Video Depth Estimation</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="css/carousel.css" type="text/css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   </head>
   <body>
@@ -74,58 +75,70 @@
           </div>
         </div>
         <!-- End of Links -->
+
       </div>
       <!-- End of Container -->
+
     </section>
 
 
-   
-
-    <section class="section" id="slide">
+    <section class="section" id="carousel">
       <div class="container">
-        <!-- Start Carousel -->
-        <div id="carousel-demo" class="carousel">
-          <div class="item-1">
-            <video muted controls loop>
-              <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
-                "Your browser does not support the video tag"
-            </video>
-          </div>
-          <div class="item-2">
-            <video muted controls loop>
-              <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
-                "Your browser does not support the video tag"
-            </video>
-          </div>
-          <div class="item-3">
-            <video muted controls loop>
-              <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
-                "Your browser does not support the video tag"
-            </video>
-          </div>
-          <div class="item-1">
-            <video muted controls loop>
-              <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
-                "Your browser does not support the video tag"
-            </video>
-          </div>
-          <div class="item-2">
-            <video muted controls loop>
-              <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
-                "Your browser does not support the video tag"
-            </video>
-          </div>
-          <div class="item-3">
-            <video muted controls loop>
-              <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
-                "Your browser does not support the video tag"
-            </video>
+        <div class="columns is-centered">
+          <div class="column is-two-thirds">
+            
+            <!-- Start Carousel Section -->
+            <section class="section has-carousel" style="padding: 0">
+              <div id="carousel-results" class="carousel">
+
+                <!-- start carousel item list -->
+                <div class="item-1">
+                  <video muted controls loop>
+                    <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
+                      "Your browser does not support the video tag"
+                  </video>
+                </div>
+                <div class="item-2">
+                  <video muted controls loop>
+                    <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
+                      "Your browser does not support the video tag"
+                  </video>
+                </div>
+                <div class="item-3">
+                  <video muted controls loop>
+                    <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
+                      "Your browser does not support the video tag"
+                  </video>
+                </div>
+                <div class="item-4">
+                  <video muted controls loop>
+                    <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
+                      "Your browser does not support the video tag"
+                  </video>
+                </div>
+                <div class="item-5">
+                  <video muted controls loop>
+                    <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
+                      "Your browser does not support the video tag"
+                  </video>
+                </div>
+                <div class="item-6">
+                  <video muted controls loop>
+                    <source src="https://storage.googleapis.com/nerf_data/website_renders/benchflower_100k_rgb.mp4" type="video/mp4">
+                      "Your browser does not support the video tag"
+                  </video>
+                </div>
+                <!-- end carousel item list -->
+
+              </div>
+            </section>
+            <!-- End Carousel Section -->
+
           </div>
         </div>
-        <!-- End Carousel -->
       </div>
     </section>
-    
+
 
     <section class="section" id="Overview-Video">
       <div class="container">
@@ -235,10 +248,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"></script>
     <script>
-    bulmaCarousel.attach('#carousel-demo', {
+    bulmaCarousel.attach('#carousel-results', {
       slidesToScroll: 1,
-      slidesToShow: 4,
-      infinite: true
+      slidesToShow: 3,
     });
     </script>
   </body>
