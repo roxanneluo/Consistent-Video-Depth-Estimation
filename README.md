@@ -1,1 +1,0 @@
-# Consistent Depth Estimation
