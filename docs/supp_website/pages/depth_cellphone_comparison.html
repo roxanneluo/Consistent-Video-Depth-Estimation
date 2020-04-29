@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="lt-ie10" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<title>Consistent Video Depth Estimation - Supplementary Material</title>
+	<link href="css/foundation.css" rel="stylesheet" type="text/css" />
+	<link href="css/twentytwenty.css" rel="stylesheet" type="text/css" />
+	<!-- jQuery -->
+	<script
+		src="https://code.jquery.com/jquery-3.1.0.min.js"
+		integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+		crossorigin="anonymous"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<br>
+				<h1>Consistent Video Depth Estimation</h1>
+				<br>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col-xs-12 text-left">
+				<a href="../index.html">
+					<button type="button" class="btn btn-link">
+						<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Back to previous page
+					</button>
+				</a>
+				<br>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 text-left">
+				<h3>Visual comparisons on the cellphone video dataset</h3>
+				<hr>
+				<div class="well well-sm">
+					<form class="form-inline">
+						<div class="form-group">
+							<label for="frame-idx-input">Sequence <span id="frame-idx">1</span> / <span id="frame-total"></span>&nbsp;</label>
+							<span id="sequence_name" style="display:inline-block; font-weight:bold; width:200px;">: Family &nbsp;</span>
+							<div class="input-group">
+								<span class="input-group-btn">
+									<button class="btn btn-info" type="button" onclick="PrevFrame();"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></button>
+								</span>
+								<input type="range" class="form-control" id="frame-idx-input" min="1" max="7" step="1" value="1" oninput="ChangeFrame();">
+								<span class="input-group-btn">
+									<button class="btn btn-info" type="button" onclick="NextFrame();"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></button>
+								</span>
+							</div>
+						</div>
+					</form>
+					<hr style="margin: 7px;">
+					<h5><strong>Method:&nbsp;</strong></h5>
+					<ul class="nav nav-pills" id="current-view-ul">
+						<li role="presentation" id="tab0" class="active"><a href="javascript: void(0);" onclick="ClickInput();">Input video</a></li>
+						<li role="presentation" id="tab1"><a href="javascript: void(0);" onclick="ChangeCurrentView(1);">COLMAP</a></li>
+						<li role="presentation" id="tab2"><a href="javascript: void(0);" onclick="ChangeCurrentView(2);">Mannequin Challenge</a></li>
+						<li role="presentation" id="tab3"><a href="javascript: void(0);" onclick="ChangeCurrentView(3);">MiDaS v2</a></li>
+						<li role="presentation" id="tab4"><a href="javascript: void(0);" onclick="ChangeCurrentView(4);">WSVD</a></li>
+						<li role="presentation" id="tab5"><a href="javascript: void(0);" onclick="ChangeCurrentView(5);">Neural RGB->D</a></li>
+						<li role="presentation" id="tab6"><a href="javascript: void(0);" onclick="ChangeCurrentView(6);">Our result</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="row" style="margin-top: 2em" id='output_canvas'>
+			  <div class="large-12 columns">
+			  <div style = text-align:center>
+			    <video autoplay muted playsinline id="output_video" width="600" controls="controls" onended="this.currentTime = 0; this.play();" 
+				src="../results/depth_cellphone/family/color.mp4" type="video/mp4">
+			    	<source src="../results/depth_cellphone/family/color.mp4" type="video/mp4">
+				</video>
+			  </div>
+			  </div>
+				<center><h5 id="method_author">&nbsp;</h5></center>
+				<center><h5 id="method_title" style="font-weight:bold">Input video </h5></center>
+				<center><h5 id="method_publication">&nbsp;</h5></center>
+    			<center><h5 id="method_remarks"><br />&nbsp;</h5></center>
+				<center><h5><a id="code_link">&nbsp;</a></h5></center>
+			   <strong><center><h5 id="video-caption">&nbsp;</h5></center></strong>
+			</div>
+			<br>
+			<br>
+		</div>
+	</div>
+
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+    <script src="js/jquery.event.move.js"></script>
+    <script src="js/jquery.twentytwenty.js"></script>
+    <script>
+    $(function(){
+      $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({default_offset_pct: 0.7});
+      $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({default_offset_pct: 0.3, orientation: 'vertical'});
+    });
+    </script>
+
+	<style type="text/css">
+.container {
+	background-color: #FBFBFC;
+}
+.teaser-img {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.img-responsive {
+	margin: auto;
+}
+.comparison-table {
+	table-layout: fixed;
+		word-wrap: break-word;
+}
+.comparison-table th {
+	text-align: center;
+}
+.disabled{
+    pointer-events:none;
+    opacity:0.7;
+}
+.row{
+	min-width: 1060px;
+}
+	</style>
+
+	<script type="text/javascript">
+	var dataset = "Cellphone"
+	<!-- var types  = ["color", "Stereo", "COLMAP", "MC", "MiDaS_v2", "WSVD", "NeuralRGBD", "Ours"]; -->
+	var types  = ["color", "COLMAP", "MC", "MiDaS_v2", "WSVD", "NeuralRGBD", "Ours"];
+	var currentView = "color";
+	var image_nameing = ["family", "cat", "skeleton", "boy", "park", "texting", "bike", "dog", "boat", "toy", "duck",  "lake", "food", "river"];
+	<!-- Update the video name here -->
+
+	function ChangeFrame(){
+
+	var frame_idx = parseInt(document.getElementById("frame-idx-input").value);
+	document.getElementById("frame-idx").innerHTML = frame_idx;
+	document.getElementById("sequence_name").innerHTML = ": " + image_nameing[frame_idx-1].toUpperCase()+"&nbsp;";
+
+	var video = document.getElementById('output_video');
+	var timestamp = video.currentTime;
+	var wasPaused = video.paused;
+	var method_name = dataset
+	video.src = "../results/depth_cellphone/"+image_nameing[frame_idx-1]+ "/" + currentView +".mp4";
+	video.currentTime = timestamp;
+	if (wasPaused) {
+		video.pause();
+	} else {
+		video.play();
+	}
+
+	console.log("Change src to: " + video.src);
+	}
+
+	function NextFrame(){
+		var frame_total = image_nameing.length;
+		var frame_idx = parseInt(document.getElementById("frame-idx-input").value);
+		if(frame_idx < frame_total){
+			document.getElementById("frame-idx-input").value = frame_idx + 1;
+			ChangeFrame();
+		}
+
+	}
+
+	function PrevFrame(){
+		var frame_idx = parseInt(document.getElementById("frame-idx-input").value);
+		if(frame_idx > 1){
+			document.getElementById("frame-idx-input").value = frame_idx - 1;
+			ChangeFrame();
+		}
+	}
+
+	function ChangeCurrentView(idx){
+	    var li_list = document.getElementById("current-view-ul").children;
+		console.log(idx);
+		console.log(li_list);
+		for(i = 0; i < li_list.length; i++){
+			li_list[i].className = "";
+		}
+		li_list[idx].className = "active";
+		currentView = types[idx];
+		document.getElementById("output_canvas").style.display = 'block';
+		var frame_idx = parseInt(document.getElementById("frame-idx-input").value);
+
+		document.getElementById("video-caption").innerHTML = "&nbsp;";
+
+		if(idx == 0){ // Stereo
+			document.getElementById("method_author").innerHTML = "Eddy Ilg, Nikolaus Mayer, Tonmoy Saikia, Margret Keuper, Alexey Dosovitskiy, and Thomas Brox";
+			document.getElementById("method_title").innerHTML = "FlowNet 2.0: Evolution of Optical Flow Estimation with Deep Networks";
+			document.getElementById("method_publication").innerHTML = "IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2017";
+			document.getElementById("method_remarks").innerHTML = "Note: The disparity are computed by using the horizontal components of the optical flow between the stereo pari (extracted using FlowNet2). The computed disparity is used for calibrating the scale for all the methods for computing the photometric errors.";
+			document.getElementById("code_link").href = "https://github.com/NVIDIA/flownet2-pytorch";
+			document.getElementById("code_link").innerHTML = "https://github.com/NVIDIA/flownet2-pytorch";
+		}
+		if(idx == 1){ // COLMAP
+			document.getElementById("method_author").innerHTML = "Johannes L. Schönberger and Jan-Michael Frahm";
+			document.getElementById("method_title").innerHTML = "Structure-from-Motion Revisited";
+			document.getElementById("method_publication").innerHTML = "IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2016";
+			document.getElementById("method_remarks").innerHTML = "" + "<br />" + "&nbsp";
+			document.getElementById("code_link").href = "https://colmap.github.io/";
+			document.getElementById("code_link").innerHTML = "https://colmap.github.io/";
+		}
+		if(idx == 2){ // Mannequin Challenge
+			document.getElementById("method_author").innerHTML = "Zhengqi Li, Tali Dekel, Forrester Cole, Richard Tucker, Noah Snavely, Ce Liu, and William T. Freeman";
+			document.getElementById("method_title").innerHTML = "Learning the Depths of Moving People by Watching Frozen People";
+			document.getElementById("method_publication").innerHTML = "IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2019";
+			document.getElementById("method_remarks").innerHTML = "Note: Results are obtained using the monocular model.";
+			document.getElementById("code_link").href = "https://github.com/google/mannequinchallenge";
+			document.getElementById("code_link").innerHTML = "https://github.com/google/mannequinchallenge";
+		}
+		if(idx == 3){ // MiDaS v2
+			document.getElementById("method_author").innerHTML = "René Ranftl, Katrin Lasinger, David Hafner, Konrad Schindler, and Vladlen Koltun";
+			document.getElementById("method_title").innerHTML = "Towards Robust Monocular Depth Estimation: Mixing Datasets for Zero-shot Cross-dataset Transfer";
+			document.getElementById("method_publication").innerHTML = "arXiv, 2019";
+			document.getElementById("method_remarks").innerHTML = "Note: Results are obtained using the newly releaved version on Dec 2019. We refer this new model as MiDaS-v2.";
+			document.getElementById("code_link").href = "https://github.com/intel-isl/MiDaS";
+			document.getElementById("code_link").innerHTML = "https://github.com/intel-isl/MiDaS";
+		}
+		if(idx == 4){ // WSVD
+			document.getElementById("method_author").innerHTML = "Chaoyang Wang, Simon Lucey, Federico Perazzi, and Oliver Wang";
+			document.getElementById("method_title").innerHTML = "Web Stereo Video Supervision for Depth Prediction from Dynamic Scenes";
+			document.getElementById("method_publication").innerHTML = "3D Vision (3DV), 2019";
+			document.getElementById("method_remarks").innerHTML = "Note: Two-frame based depth estimation.";
+			document.getElementById("code_link").href = "https://github.com/MightyChaos/wsvd_test";
+			document.getElementById("code_link").innerHTML = "https://github.com/MightyChaos/wsvd_test";
+		}
+		if(idx == 5){ // Neural RGBD
+			document.getElementById("method_author").innerHTML = "Chao Liu, Jinwei Gu, Kihwan Kim, Srinivasa Narasimhan, and Jan Kautz";
+			document.getElementById("method_title").innerHTML = "Neural RGB->D Sensing: Depth and Uncertainty from a Video Camera";
+			document.getElementById("method_publication").innerHTML = "IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2019";
+			document.getElementById("method_remarks").innerHTML = "Note: Video-based depth estimation.";
+			document.getElementById("code_link").href = "https://github.com/NVlabs/neuralrgbd";
+			document.getElementById("code_link").innerHTML = "https://github.com/NVlabs/neuralrgbd";
+		}
+		if(idx == 6){ // Ours
+			document.getElementById("method_author").innerHTML = "Xuan Luo, Jia-Bin Huang, Richard Szeliski, Kevin Matzen, and Johannes Kopf";
+			document.getElementById("method_title").innerHTML = "Consistent Video Depth Estimation";
+			document.getElementById("method_publication").innerHTML = "ACM Transactions on Graphics (Proceedings of SIGGRAPH), 2020";
+			document.getElementById("method_remarks").innerHTML = "Note: Video-based depth estimation";
+			document.getElementById("code_link").href = "&nbsp";
+			document.getElementById("code_link").innerHTML = "&nbsp";
+		}
+
+		ChangeFrame();
+	}
+
+	function ClickInput(){
+	    var frame_idx = parseInt(document.getElementById("frame-idx-input").value);
+
+		document.getElementById("video-caption").innerHTML = "";
+		document.getElementById("method_author").innerHTML = "&nbsp";
+		document.getElementById("method_title").innerHTML = "Input";
+		document.getElementById("method_publication").innerHTML = "&nbsp";
+		document.getElementById("method_remarks").innerHTML = "&nbsp" + "<br />" + "&nbsp";
+		document.getElementById("code_link").href = "";
+		document.getElementById("code_link").innerHTML = "";
+		idx = 0;
+		currentView = types[idx];
+		var li_list = document.getElementById("current-view-ul").children;
+		console.log(idx);
+		console.log(li_list);
+		for(i = 0; i < li_list.length; i++){
+			li_list[i].className = "";
+		}
+		li_list[idx].className = "active";
+		document.getElementById("output_canvas").style.display = 'block';
+		ChangeFrame();
+
+	}
+
+	$(window).on('load', function() {
+
+		var frame_total = image_nameing.length;
+		document.getElementById("frame-total").innerHTML = frame_total;
+		document.getElementById("frame-idx-input").value = 1;
+		document.getElementById("frame-idx-input").max = frame_total;
+
+		// ClickInput();
+	});
+
+
+
+	</script>
+
+
+</body>
+</html>
